@@ -4,6 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 public class StackMoney : MonoBehaviour
 {
+    [SerializeField] GameObject moneyEffect;
+    [SerializeField] GameObject goldEffect;
+    [SerializeField] GameObject diamondEffect;
     public List<GameObject> Moneys = new List<GameObject>();
     #region 
     public static StackMoney Instance;
@@ -72,8 +75,24 @@ public class StackMoney : MonoBehaviour
     public void RemoveList(GameObject indexObj)
     {
         int index = Mathf.Abs(Moneys.IndexOf(indexObj));
-        Destroy(indexObj);
-        Debug.Log(index+"index");
+        int childCount=indexObj.GetComponent<MoneyTransformation>().MoneyChildCount;
+        if (childCount == 0)
+        {
+            Instantiate(moneyEffect, indexObj.transform.position, Quaternion.identity);
+
+        }
+        else if (childCount == 1)
+        {
+
+            Instantiate(goldEffect, indexObj.transform.position, Quaternion.identity);
+        }
+        else if (childCount == 2)
+        {
+
+            Instantiate(diamondEffect, indexObj.transform.position, Quaternion.identity);
+        }
+        indexObj.SetActive(false);
+
         List<GameObject>Unlist= Moneys.GetRange(Mathf.Abs(index), Mathf.Abs(Moneys.Count - index));
         Moneys.RemoveRange(index, Mathf.Abs(Moneys.Count - index));
         foreach (var item in Unlist)

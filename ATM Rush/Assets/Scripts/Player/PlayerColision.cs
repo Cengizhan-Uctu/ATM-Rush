@@ -15,7 +15,15 @@ public class PlayerColision : MonoBehaviour
             other.gameObject.AddComponent<PlayerColision>();
             StackMoney.Instance.Stack(other.gameObject, StackMoney.Instance.Moneys.Count - 1);
         }
-   
+        if (other.CompareTag("Obstacle"))
+        {
+            if (gameObject.transform.childCount <= 2)
+            {
+               
+                PlayerMoveForward.Instance.CollisionObstacle();
+            }
+
+        }
+
     }
-   
 }

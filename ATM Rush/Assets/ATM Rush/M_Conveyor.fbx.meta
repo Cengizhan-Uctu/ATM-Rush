@@ -3,7 +3,12 @@ guid: 57e413df6cab8ae429fc2f5f386d4b62
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Conveyor
+    second: {fileID: 2100000, guid: 33f8d1cb8122fc041bdbaab672ed8d53, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

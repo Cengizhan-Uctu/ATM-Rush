@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class MoneyTransformation : MonoBehaviour
 {
-    int childCount;
+    public int MoneyChildCount;
+   
     private void Start()
     {
-        childCount = 0;
-        if (childCount == 0)
+        MoneyChildCount = 0;
+        if (MoneyChildCount == 0)
         {
-            transform.GetChild(childCount).gameObject.SetActive(true);
+            transform.GetChild(MoneyChildCount).gameObject.SetActive(true);
         }
     }
+    
     public void TransformationMoney()
     {
 
-        childCount++;
+        MoneyChildCount++;
       
-        if (childCount == 0)
+        if (MoneyChildCount == 0)
         {
-            transform.GetChild(childCount).gameObject.SetActive(true);
+            transform.GetChild(MoneyChildCount).gameObject.SetActive(true);
         }
-        else if (childCount == 1)
+        else if (MoneyChildCount == 1)
         {
-            transform.GetChild(childCount).gameObject.SetActive(true);
-            transform.GetChild(childCount - 1).gameObject.SetActive(false);
+            transform.GetChild(MoneyChildCount).gameObject.SetActive(true);
+            transform.GetChild(MoneyChildCount - 1).gameObject.SetActive(false);
         }
-        else if (childCount == 2)
+        else if (MoneyChildCount == 2)
         {
-            childCount = 2;
-            transform.GetChild(childCount).gameObject.SetActive(true);
-            transform.GetChild(childCount - 1).gameObject.SetActive(false);
+            MoneyChildCount = 2;
+            transform.GetChild(MoneyChildCount).gameObject.SetActive(true);
+            transform.GetChild(MoneyChildCount - 1).gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
