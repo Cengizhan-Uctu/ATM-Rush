@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Character
   - CollectedMoney
+  - FinshLine
   layers:
   - Default
   - TransparentFX

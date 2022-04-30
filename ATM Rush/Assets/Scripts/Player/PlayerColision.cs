@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerColision : MonoBehaviour
 {
-    // bagzi carpısmaları layer kullanarak engelledim. bak Edit>Prajeck Settings> Phsiscs
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Money"))
