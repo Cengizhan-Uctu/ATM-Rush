@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class GameOverProgres : MonoBehaviour
+public class GameOverProgres : SingeltonGeneric<GameOverProgres>
 {
     [SerializeField] GameObject incresMoney;
     [SerializeField] GameObject Tower;
+    #region singelton
+    private void Awake()
+    {
+        MakeSingelton(this);
+    }
+    #endregion
     void Start()
     {
         transform.DOMove(new Vector3(0, transform.position.y, Tower.transform.position.z - 4), 1).OnComplete(() => StartCoroutine(incresMoneyTower(10)));
@@ -25,4 +31,5 @@ public class GameOverProgres : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+   
 }

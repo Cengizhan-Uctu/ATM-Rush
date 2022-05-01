@@ -8,6 +8,7 @@ public class StackMoney : MonoBehaviour
     [SerializeField] GameObject goldEffect;
     [SerializeField] GameObject diamondEffect;
     public List<GameObject> Moneys = new List<GameObject>();
+    public bool DoseitMove;
     #region 
     public static StackMoney Instance;
     [SerializeField] GameObject pickup;
@@ -21,6 +22,7 @@ public class StackMoney : MonoBehaviour
     #endregion
     private void Start()
     {
+        DoseitMove = true;
         Moneys.Add(gameObject.transform.GetChild(0).gameObject);
     }
     public void Stack(GameObject money, int index)
@@ -48,29 +50,37 @@ public class StackMoney : MonoBehaviour
     }
     public void MoveMoney()
     {
-        for (int i = 1; i < Moneys.Count; i++)
+        if (DoseitMove==true)
         {
-            if (Moneys[i] != null)
+            for (int i = 1; i < Moneys.Count; i++)
             {
-                Vector3 pos = Moneys[i].transform.localPosition;
-                pos.x = Moneys[i - 1].transform.localPosition.x;
-                Moneys[i].transform.DOLocalMove(pos, 0.2f);
+                if (Moneys[i] != null)
+                {
+                    Vector3 pos = Moneys[i].transform.localPosition;
+                    pos.x = Moneys[i - 1].transform.localPosition.x;
+                    Moneys[i].transform.DOLocalMove(pos, 0.2f);
+                }
             }
         }
+       
     }
 
     public void MoveDefauld()
     {
-        for (int i = 1; i < Moneys.Count; i++)
+        if (DoseitMove==true)
         {
-            if (Moneys[i] != null)
+            for (int i = 1; i < Moneys.Count; i++)
             {
-                Vector3 Pos = Moneys[i].transform.localPosition;
-                Pos.x = Moneys[0].transform.localPosition.x;
-                Moneys[i].transform.DOLocalMove(Pos, 0.5f);
+                if (Moneys[i] != null)
+                {
+                    Vector3 Pos = Moneys[i].transform.localPosition;
+                    Pos.x = Moneys[0].transform.localPosition.x;
+                    Moneys[i].transform.DOLocalMove(Pos, 0.5f);
+                }
+
             }
-              
         }
+       
     }
     public void RemoveList(GameObject indexObj)
     {

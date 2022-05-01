@@ -16,5 +16,15 @@ public class MoneySpread : MonoBehaviour
         transform.DOPunchScale( new Vector3(.3f,.3f,.3f), 0.3f);
         gameObject.tag = "Money";
     }
+    public void BandMove(GameObject band)
+    {
+        transform.parent = band.transform;
+        transform.DOLocalMove(new Vector3(transform.localPosition.x, 0.6f, 0),.1f).OnComplete(() => transform.DOLocalMoveX(-3,0.5f));
+        if (transform.localPosition.z > 0)
+        {
+            transform.parent = band.transform;
+            transform.DOLocalMove(new Vector3(transform.localPosition.x, 0.6f, 0), .1f).OnComplete(() => transform.DOLocalMoveX(-3, 0.5f));
+        }
+    }
       
 }

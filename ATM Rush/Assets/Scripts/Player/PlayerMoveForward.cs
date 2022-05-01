@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class PlayerMoveForward : SingeltonGeneric<PlayerMoveForward>
 {
-    [SerializeField] float speed;
+    public float speed;
     #region singelton
     private void Awake()
     {
@@ -19,5 +19,6 @@ public class PlayerMoveForward : SingeltonGeneric<PlayerMoveForward>
     public void CollisionObstacle()
     {
         transform.DOMoveZ(transform.position.z - 15, 0.7f);
+       
     }
 }
