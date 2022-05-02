@@ -7,7 +7,7 @@ public class ObstacleMove : MonoBehaviour
     [SerializeField] ObstacleScriptableobject ObstacleValues;
     bool YoyoMove = false;
     bool YoyoRotate = false;
-    float speed = 2;
+    float speed;
     float xAxisiValue;
     bool xAxsis;
     private void Start()

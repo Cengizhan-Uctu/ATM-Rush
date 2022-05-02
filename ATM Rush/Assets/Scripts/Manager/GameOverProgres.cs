@@ -15,8 +15,7 @@ public class GameOverProgres : SingeltonGeneric<GameOverProgres>
     void Start()
     {
         transform.DOMove(new Vector3(0, transform.position.y, Tower.transform.position.z - 4), 1).OnComplete(() => StartCoroutine(incresMoneyTower(10)));
-        transform.DORotate(Vector3.zero, 1f, RotateMode.Fast);
-
+        transform.DORotate(Vector3.zero, 1f, RotateMode.Fast).OnComplete(() => StartCoroutine(NoThanksBtnSetActive()));
     }
 
 
@@ -30,6 +29,11 @@ public class GameOverProgres : SingeltonGeneric<GameOverProgres>
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z);
             yield return new WaitForSeconds(0.1f);
         }
+    }
+    IEnumerator NoThanksBtnSetActive()
+    {
+        yield return new WaitForSeconds(1);
+        UIProgres.Instance.SetActiveGameEndPanel(true);
     }
    
 }

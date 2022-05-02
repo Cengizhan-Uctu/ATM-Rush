@@ -26,7 +26,7 @@ public class BandCollider : MonoBehaviour
         if (other.CompareTag("Character"))
         {
             PlayerMoveForward.Instance.speed = 0;
-            other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetBool("IdleAnimation",true);
+            AnimationManger.Instance.IdleAnimation();
             StartCoroutine(GameEndProgres());
 
         }

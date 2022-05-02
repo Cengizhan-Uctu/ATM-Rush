@@ -11,14 +11,17 @@ GameObject:
   - component: {fileID: 5169845083767719763}
   - component: {fileID: 8075272041995520246}
   - component: {fileID: 6338207805070752828}
+  - component: {fileID: 2356438299720322968}
   - component: {fileID: 4626397257039096000}
+  - component: {fileID: 590966399}
+  - component: {fileID: 590966405}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5169845083767719763
 Transform:
   m_ObjectHideFlags: 0
@@ -82,6 +85,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2356438299720322968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545384811284536809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad9f6363a8490b409decaea05b02805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4626397257039096000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +110,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstacleValues: {fileID: 11400000, guid: a79ef8042c8314543abafef24060159c, type: 2}
+--- !u!65 &590966399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545384811284536809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.11, z: 0.23237228}
+  m_Center: {x: -0.00000014901161, y: -3.99, z: 0.0000000037252903}
+--- !u!54 &590966405
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545384811284536809}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

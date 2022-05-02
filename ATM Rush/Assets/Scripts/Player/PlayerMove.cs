@@ -6,27 +6,24 @@ public class PlayerMove : SingeltonGeneric<PlayerMove>
 {
     private float lastPosX;
     private float currentPosX;
-    [SerializeField] float Speed;
-    
+    public float Speed;
+
     #region singelton
     private void Awake()
     {
         MakeSingelton(this);
     }
     #endregion
-
-  
-  
     void Update()
     {
-       
+
         inputMove();
         Motor();
 
     }
     void Motor()
     {
-       
+
         currentPosX = currentPosX * Time.deltaTime * Speed * -1;
         transform.position += new Vector3(currentPosX, 0, 0);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.2f, 4.2f), transform.position.y, transform.position.z);
@@ -52,6 +49,6 @@ public class PlayerMove : SingeltonGeneric<PlayerMove>
         }
     }
 
-  
-   
+
+
 }

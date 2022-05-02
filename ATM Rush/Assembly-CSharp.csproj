@@ -57,12 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Obstacle\ObstacleMove.cs" />
-    <Compile Include="Assets\Scripts\Player\StackMoney.cs" />
+    <Compile Include="Assets\Scripts\Money\StackMoney.cs" />
+    <Compile Include="Assets\Scripts\ATM\ATMBandOfset.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerColision.cs" />
+    <Compile Include="Assets\Scripts\ATM\BandCollider.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Scripts\ATM\FinishATM.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\UIprogress\UIProgres.cs" />
     <Compile Include="Assets\Scripts\Manager\GameOverProgres.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
@@ -73,15 +77,14 @@
     <Compile Include="Assets\Scripts\Manager\SingeltonGeneric.cs" />
     <Compile Include="Assets\Scripts\Money\MoneySpread.cs" />
     <Compile Include="Assets\DefaultScene\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\ATM\ATMCollider.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleCollider.cs" />
+    <Compile Include="Assets\Scripts\Manager\AnimationManger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\Scripts\ATM\ATMBandOfset.cs" />
-    <Compile Include="Assets\Scripts\ATM\ATMCollider.cs" />
-    <Compile Include="Assets\Scripts\ATM\BandCollider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DefaultScene\Plugins\Demigiant\DOTween\DOTween.XML" />

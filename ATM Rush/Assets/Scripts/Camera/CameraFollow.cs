@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] GameObject Character;
-    
+    GameObject Character;
+
     Vector3 distance;
     private void Start()
     {
+        Character = GameObject.FindGameObjectWithTag("Character");
         distance = transform.position - Character.transform.position;
 
     }
